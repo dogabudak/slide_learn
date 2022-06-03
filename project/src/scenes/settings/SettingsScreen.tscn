@@ -57,8 +57,8 @@ valign = 1
 margin_top = 47.0
 margin_right = 328.0
 margin_bottom = 111.0
-custom_styles/separator = SubResource( 2 )
 custom_constants/separation = 64
+custom_styles/separator = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -67,8 +67,8 @@ __meta__ = {
 margin_top = 115.0
 margin_right = 328.0
 margin_bottom = 155.0
-custom_styles/focus = SubResource( 3 )
 custom_fonts/font = ExtResource( 2 )
+custom_styles/focus = SubResource( 3 )
 pressed = true
 text = "Show tile numbers"
 __meta__ = {
@@ -79,8 +79,8 @@ __meta__ = {
 margin_top = 159.0
 margin_right = 328.0
 margin_bottom = 191.0
-custom_styles/separator = SubResource( 2 )
 custom_constants/separation = 32
+custom_styles/separator = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -139,23 +139,23 @@ text = "4"
 margin_top = 218.0
 margin_right = 328.0
 margin_bottom = 248.0
-custom_styles/separator = SubResource( 5 )
 custom_constants/separation = 30
+custom_styles/separator = SubResource( 5 )
 
 [node name="FileButton" type="Button" parent="M/V"]
-margin_left = 73.0
+margin_left = 115.0
 margin_top = 252.0
-margin_right = 254.0
+margin_right = 213.0
 margin_bottom = 272.0
 size_flags_horizontal = 6
-text = "Choose Background Image"
+text = "Fetch Images"
 
 [node name="VS2" type="HSeparator" parent="M/V"]
 margin_top = 276.0
 margin_right = 328.0
 margin_bottom = 306.0
-custom_styles/separator = SubResource( 5 )
 custom_constants/separation = 30
+custom_styles/separator = SubResource( 5 )
 
 [node name="BackButton" type="Button" parent="M/V"]
 margin_left = 132.0
@@ -177,7 +177,7 @@ custom_styles/separator = SubResource( 5 )
 margin_top = 376.0
 margin_right = 328.0
 margin_bottom = 390.0
-text = "Game by Delano Lourenco"
+text = "Game by Doga Budak"
 align = 1
 
 [node name="FileDialog" type="FileDialog" parent="M"]
@@ -191,9 +191,9 @@ window_title = "Open a File"
 mode = 0
 access = 2
 filters = PoolStringArray( "*.png", "*.jpeg", "*.jpg", "*.bmp", "*webp" )
-current_dir = "/Projects/Godot/Projects/SlidePuzzle/project/assets/backgrounds"
+current_dir = "/Users/dogabudak/sideProjects/slide-puzzle-godot/project"
 current_file = "deku.jpg"
-current_path = "/Projects/Godot/Projects/SlidePuzzle/project/assets/backgrounds/deku.jpg"
+current_path = "/Users/dogabudak/sideProjects/slide-puzzle-godot/project/deku.jpg"
 
 [node name="PopupMessage" parent="M" instance=ExtResource( 4 )]
 

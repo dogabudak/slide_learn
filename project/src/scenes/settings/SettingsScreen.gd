@@ -23,20 +23,22 @@ func _on_BackButton_pressed():
 
 
 func _on_FileButton_pressed():
-	file_dialog.popup()
+		# Create an HTTP request node and connect its completion signal
+	var http_request = HTTPRequest.new()
+	add_child(http_request)
+	http_request.connect("request_completed", self, "_http_request_completed")
 
-func _on_FileDialog_file_selected(path):
-	print('path ', path)
+	# Perform the HTTP request. The URL below returns a PNG image as of writing.
+	var http_error = http_request.request("https://via.placeholder.com/500")
+	if http_error != OK:
+		print("An error occurred in the HTTP request.")
 
+func _http_request_completed(result, response_code, headers, body):
 	var image = Image.new()
-	var err = image.load(path)
-	if err != OK:
-		message_popup.setup("Error Occured", "There was an error importing the image.")
-		message_popup.popup()
-		return
+	var image_error = image.load_png_from_buffer(body)
+	if image_error != OK:
+		print("An error occurred while trying to display the image.")
 
-	message_popup.setup("Success", "The background image was changed successully.")
 	var texture = ImageTexture.new()
-	texture.create_from_image(image, 0)
-	message_popup.popup()
+	texture.create_from_image(image)
 	emit_signal("background_update", texture)

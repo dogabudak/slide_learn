@@ -5,6 +5,8 @@ var game_won = false
 var start_epoch
 var current_epoch
 
+var DogBarkSound = preload("res://assets/sounds/dog-bark.wav")
+
 onready var board = $MarginContainer/VBoxContainer/GameView/Board
 
 onready var overlay = $MarginContainer/VBoxContainer/GameView/StartOverlay
@@ -14,6 +16,8 @@ onready var move_value = $MarginContainer/VBoxContainer/StatsView/HBoxContainer/
 onready var timer_value = $MarginContainer/VBoxContainer/StatsView/HBoxContainer/Time/TimeValue
 
 onready var anim_player = $AnimationPlayer
+onready var game_won_sound = $GameWonSound
+
 func _ready():
 	overlay.visible = true
 
@@ -38,6 +42,8 @@ func _on_Board_game_won():
 	overlay.visible = true
 	is_started = false
 	game_won = true
+	game_won_sound.play()
+
 
 
 func _on_RestartButton_pressed():

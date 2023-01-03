@@ -1,6 +1,6 @@
 extends Control
 
-export var size = 3
+export var size = 2
 export var tile_size = 80
 export var tile_scene: PackedScene
 export var slide_duration = 0.15

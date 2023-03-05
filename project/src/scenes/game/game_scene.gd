@@ -47,10 +47,10 @@ func _on_Board_game_won():
 
 
 func _on_RestartButton_pressed():
-	if not is_started:
-		return
 	board.reset_move_count()
 	board.scramble_board()
+	if overlay.visible:
+		overlay.visible = false
 	board.game_state = board.GAME_STATES.STARTED
 	start_epoch = OS.get_ticks_msec()
 	is_started = true
